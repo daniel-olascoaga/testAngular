@@ -1,0 +1,127 @@
+a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+/* Add a grey background color to dropdown links on hover */
+a:hover {
+    background-color: #ddd;
+}
+
+.modal {
+    position: fixed;
+    top: -150vh;
+    left: 0;
+    z-index: 1;
+    background: darkblue;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.35s ease;
+    padding-top: 60px;
+}
+
+.modal .content-modal {
+    width: 100%;
+    max-width: 500px;
+    position: fixed;
+    left: 50%;
+    top: 100vh;
+    transition: top 0.35s ease;
+    margin-left: -250px;
+    background: white;
+    box-shadow: 0 1px 2px #ddd;
+    border-radius: 2px;
+    z-index: 99999999;
+}
+  
+.modal p {
+    padding: 0.5em;
+    text-align: center;
+    color: darkred;
+    margin: 0;
+
+}
+
+.modal .container label {
+    display: block;
+    width: 100%;
+}
+
+.modal .container input {
+    width: 100%;
+}
+
+.close-modal {
+    color: darkred;
+    position: absolute;
+    top: 0.2em;
+    right: 0.375em;
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+    /*text-decoration: None;*/
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: darkred;
+    cursor: pointer;    
+}
+
+.modal:target {
+    opacity: 1;
+    top: 0;
+}
+
+.modal .btn-close-modal {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    top: 0.2em;
+    right: 0.375em;
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+    
+}
+
+.modal:target .content-modal {
+    top: 50px;
+    transition: top 0.35s ease;
+
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+@media(max-width: 500px) {
+    .modal .content-modal {
+        width: 90%;
+        max-width: none;
+        left: 5%;
+        margin-left: 0;
+    }
+}
